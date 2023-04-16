@@ -1,0 +1,11 @@
+:root {
+    --font-family: 'Dongle', sans-serif;
+    --md: 3em;
+    --sm: 1.5em;
+    --footer-color: #180b2e;
+    --buttons-color: #4e2e86;
+    --text-color: aliceblue;
+    --button-text-size: 18px;
+    --button-font-weight: 400;
+    --button-bc-hover: rgb(19, 73, 55);
+}
