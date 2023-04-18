@@ -1,30 +1,10 @@
 let page = 1;
 
-const btnPrevious = document.getElementById('btnPrevious');
-const btnNext = document.getElementById('btnNext');
-
-btnPrevious.addEventListener('click', () => {
-  if (page > 1) {
-    page -= 1;
-    fetchData();
-    console.log(page);
-  }
-});
-
-btnNext.addEventListener('click', () => {
-  if (page < 1000) {
-    page += 1;
-    fetchData();
-    console.log(page);
-  }
-});
-
 const API_KEY = "bd92795a62f0bc500027cd3dd29942a3";
-const BASE_URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&language=en-US&page=${page}`;
 
 const fetchData = async () => {
   try {
-    const data = await fetch(BASE_URL);
+    const data = await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&language=en-US&page=${page}`);
     console.log(data);
     if (data.status === 200) {
       const dataJson = await data.json();
@@ -53,3 +33,24 @@ const fetchData = async () => {
 };
 
 fetchData();
+
+
+const btnPrevious = document.getElementById('btnPrevious');
+const btnNext = document.getElementById('btnNext');
+
+btnPrevious.addEventListener('click', () => {
+  if (page > 1) {
+    page -= 1;
+    fetchData();
+    console.log(page);
+  }
+});
+
+btnNext.addEventListener('click', () => {
+  if (page < 1000) {
+    page += 1;
+    fetchData();
+    console.log(page);
+  }
+});
+
